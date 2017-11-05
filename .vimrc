@@ -1,7 +1,7 @@
 "general
 
 set nocompatible
-filetype off
+filetype plugin indent on 
 set encoding=utf-8
 
 "set nowrap
@@ -31,12 +31,6 @@ set encoding=utf-8
 "set mouse=a
 "set pastetoggle=<F2>
 
-" interface
-set t_Co=256
-set background=dark
-colorscheme monokai
-syntax on
-
 " indentation settings
 set tabstop=4
 set shiftwidth=4
@@ -47,13 +41,17 @@ set expandtab
 set number
 
 " mappings
-
+let mapleader = "\<Space>"
+inoremap jk <ESC>
 "map <up> <nop>
 "map <down> <nop>
 "map <left> <nop>
 "map <right> <nop>
 "map jk <ESC>
 "let mapleader = "\<Space>"
+nmap ; :Buffers<CR>
+nmap <Leader>t :Files<CR>
+nmap <Leader>r :Tags<CR>
 
 " vundle
 
@@ -61,9 +59,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdTree'
+"Plugin 'kien/ctrlp.vim'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/nerdTree'
 "Plugin 'jelera/vim-javascript-syntax'
 "Plugin 'pangloss/vim-javascript'
 "Plugin 'tpope/vim-surround'
@@ -74,9 +72,17 @@ Plugin 'scrooloose/nerdTree'
 "Plugin 'altercation/vim-colors-solarized'
 "Plugin 'wombat256.vim'
 Plugin 'bling/vim-airline'
+Plugin 'dracula/vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 call vundle#end()
 filetype plugin indent on
+
+" interface
+set t_Co=256
+color dracula
+syntax on
 
 " syntastic
 set statusline+=%#warningmsg#

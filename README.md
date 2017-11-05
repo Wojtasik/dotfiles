@@ -1,2 +1,2 @@
 # dotfiles
-This repo contains useful dotfiles that I use.
+This repo contains useful dotfiles which I use.
