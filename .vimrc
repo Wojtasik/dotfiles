@@ -37,8 +37,11 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
-" line numers
-set number
+ " line numers
+ set number relativenumber
+ 
+ " netrw
+ let g:netrw_banner = 0
 
 " mappings
 let mapleader = "\<Space>"
