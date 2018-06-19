@@ -45,11 +45,11 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git node npm osx sublime docker pip atom yarn docker)
+plugins=(git node npm osx sublime brew httpie pip yarn docker docker-compose docker-machine zsh-autosuggestions)
 
 # User configuration
 
-export PATH="/usr/local/php5/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/usr/local/sbin:/sbin:/usr/local/git/bin:$HOME/.nodenv/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/usr/local/sbin:/sbin:/usr/local/git/bin:$HOME/.nodenv/bin"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -82,6 +82,9 @@ eval "$(nodenv init -)"
 
 alias mc='LANG=en_GB.UTF-8 mc'
 
+# zsh autosuggestions
+export ZSH_AUTOSUGGEST_USE_ASYNC=true
+
 # fzf via Homebrew
 if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
   source /usr/local/opt/fzf/shell/key-bindings.zsh
@@ -100,3 +103,12 @@ export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS=''
+
+fe() {
+  local files
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+}
+
+alias open-docker="open /Applications/Docker.app"
+alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
