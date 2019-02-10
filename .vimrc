@@ -4,20 +4,15 @@ set nocompatible
 filetype plugin indent on 
 set encoding=utf-8
 
-"set nowrap
-"set tabstop=4
-"set backspace=indent,eol,start
-"set autoindent
-"set copyindent
-"set number
-"set shiftwidth=4
+set backspace=indent,eol,start
+set autoindent
+set copyindent
 "set shiftround
 "set showmatch
-"set ignorecase
-"set smartcase
-"set smarttab
-"set hlsearch
-"set incsearch
+set smartcase
+set smarttab
+set hlsearch
+set incsearch
 
 "set history=1000
 "set undolevels=1000
@@ -32,9 +27,9 @@ set encoding=utf-8
 "set pastetoggle=<F2>
 
 " indentation settings
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
  " line numers
@@ -50,8 +45,6 @@ inoremap jk <ESC>
 "map <down> <nop>
 "map <left> <nop>
 "map <right> <nop>
-"map jk <ESC>
-"let mapleader = "\<Space>"
 nmap ; :Buffers<CR>
 nmap <Leader>t :Files<CR>
 nmap <Leader>r :Tags<CR>
@@ -62,9 +55,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-"Plugin 'kien/ctrlp.vim'
 "Plugin 'scrooloose/syntastic'
-"Plugin 'scrooloose/nerdTree'
 "Plugin 'jelera/vim-javascript-syntax'
 "Plugin 'pangloss/vim-javascript'
 "Plugin 'tpope/vim-surround'
@@ -72,8 +63,6 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'nathanaelkane/vim-indent-guides'
 "Plugin 'Raimondi/delimitMate'
 "Plugin 'marijnh/tern_for_vim'
-"Plugin 'altercation/vim-colors-solarized'
-"Plugin 'wombat256.vim'
 Plugin 'bling/vim-airline'
 Plugin 'dracula/vim'
 Plugin 'junegunn/fzf'

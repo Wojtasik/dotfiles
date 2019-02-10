@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git node npm osx sublime brew httpie pip yarn docker docker-compose docker-machine zsh-autosuggestions)
+plugins=(git node npm osx brew httpie pip yarn docker docker-compose docker-machine zsh-autosuggestions)
 
 # User configuration
 
@@ -112,3 +112,9 @@ fe() {
 
 alias open-docker="open /Applications/Docker.app"
 alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
+export REACT_EDITOR=webstorm
+alias backup-photos="rsync -arv /Volumes/v/Photos /Volumes/Photos"
+
+function removeZwiftSong() {
+    mv /Users/patryk/Library/Application\ Support/Zwift/data/Audio/OSX/777200017.wem /Users/patryk/Library/Application\ Support/Zwift/data/Audio/OSX/777200017.wem.bak
+}
