@@ -79,6 +79,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 eval "$(nodenv init -)"
+export REACT_EDITOR=webstorm
 
 alias mc='LANG=en_GB.UTF-8 mc'
 
@@ -112,7 +113,6 @@ fe() {
 
 alias open-docker="open /Applications/Docker.app"
 alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
-export REACT_EDITOR=webstorm
 alias backup-photos="rsync -arv /Volumes/v/Photos /Volumes/Photos"
 
 function removeZwiftSong() {
